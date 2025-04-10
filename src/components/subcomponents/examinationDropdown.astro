@@ -1,0 +1,40 @@
+---
+---
+
+<select name="MaterialArchive__noTable__sbv__ExaminationSelect" id="MaterialArchive__noTable__sbv__ExaminationSelect" >
+    <option value="" selected="">[Select Examination]</option>
+    <option value="0" disabled></option>
+    <option value="lb" aria-label="Leaving Certificate Applied">Leaving Certificate Applied</option>
+    <option value="lc" aria-label="Leaving Certificate">Leaving Certificate</option>
+    <option value="jc" aria-label="Junior Certificate / Cycle">Junior Certificate / Cycle</option>
+</select>
+
+<style>
+    select {
+        font-family: Arial;
+        padding: 8px 16px;
+        border: 1px solid transparent;
+        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        cursor: pointer;
+        user-select: none;
+        box-shadow: inset 0px 0px 2px black;
+    }
+</style>
+
+<script>
+    document.getElementById("MaterialArchive__noTable__sbv__ExaminationSelect")?.addEventListener("change", (elm) => {
+       const value = (elm.target as HTMLSelectElement)?.value ?? ""
+
+        const targetElement = document.querySelector(`[${value}-subjects]`);
+
+        console.log(`[${value}-subjects]`)
+
+        document.querySelectorAll("[id='MaterialArchive__noTable__sbv__SubjectSelect']").forEach((element) => {
+            if (element !== targetElement) {
+                (element as HTMLSelectElement).disabled = true;
+            } else {
+                (element as HTMLSelectElement).disabled = false;
+            }
+        });
+    })
+ </script>

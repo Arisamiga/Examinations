@@ -1,0 +1,45 @@
+---
+const {state} = Astro.props
+---
+
+<label id="terms">
+    <input type="checkbox" id="terms" name="terms" { ...(state ? { checked: true } : {}) }  data-test/>
+    I have read, understand and accept the <a href="https://www.examinations.ie/TermsConditions.html" title="Link to the terms and conditions document" id="termsConditions">Terms and Conditions</a> of use of the examination material provided by the State Examinations Commission.
+</label>
+
+<style>
+    #terms {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #9D1917;
+        font-weight: bold;
+        font-size: 75%;
+        font-family: arial, helvetica;
+        flex-wrap: wrap;
+    }
+    #termsConditions {
+        font-weight: bold;
+        color: #005938;
+        margin: 0 3px
+    }
+    #terms input[type="checkbox"] {
+        margin-right: 8px; /* Adds spacing between the checkbox and the text */
+    }
+</style>
+
+<script>
+const checkbox = document.querySelectorAll("[data-test]");
+
+checkbox.forEach(element => {
+    element.addEventListener('click', (elm) => showButtons(elm))
+});
+
+function showButtons(event: Event) {
+    if (event.target instanceof HTMLInputElement && event.target.type === "checkbox") {
+        if (event.target.checked ? true : false){
+            window.location.href = '/papers';
+        }
+    }
+}
+</script>

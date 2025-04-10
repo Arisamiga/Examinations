@@ -1,0 +1,24 @@
+---
+---
+
+<div class="buttonLayout">
+<slot/>
+</div>
+
+<style>
+    .buttonLayout {
+        border: 10px solid red;
+        padding: 1rem;
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+
+    @media (max-width: 768px) {
+        .buttonLayout {
+            flex-direction: column; 
+            align-items: stretch;
+        }
+    }
+</style>

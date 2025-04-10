@@ -1,0 +1,88 @@
+---
+
+---
+
+
+<button apply-Btn>Apply</button>
+
+<iframe id="responseFrame" name="responseFrame"></iframe>
+
+<style>
+    button {
+      background-color: #04aa6d;
+      border: none;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      padding: 10px 34px;
+      border-radius: 2%;
+    }
+  
+    button:hover {
+      background-color: #028a57;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
+      transition: 1s;
+    }
+    
+    iframe {
+        width: 100%;
+        height: 100%
+    }
+  </style>
+
+<script>
+const button = document.querySelectorAll("[apply-Btn]");
+
+button.forEach((element) => {
+  element.addEventListener("click", () => createAndSubmitForm());
+});
+
+function createAndSubmitForm() {
+  // Define the form data in the correct order
+  const forminfo = [
+    { name: "MaterialArchive__noTable__cbv__AgreeCheck", value: "Y" },
+    { name: "MaterialArchive__noTable__cbh__AgreeCheck", value: "N" },
+    { name: "MaterialArchive__noTable__sbv__ViewType", value: getFieldValue("#MaterialArchive__noTable__sbv__ViewType") },
+    { name: "MaterialArchive__noTable__sbh__ViewType", value: "id" },
+    { name: "MaterialArchive__noTable__sbv__YearSelect", value: getFieldValue("#MaterialArchive__noTable__sbv__YearSelect") },
+    { name: "MaterialArchive__noTable__sbh__YearSelect", value: "id" },
+    { name: "MaterialArchive__noTable__sbv__ExaminationSelect", value: getFieldValue("#MaterialArchive__noTable__sbv__ExaminationSelect") },
+    { name: "MaterialArchive__noTable__sbh__ExaminationSelect", value: "id" },
+    { name: "MaterialArchive__noTable__sbv__SubjectSelect", value: getFieldValue("#MaterialArchive__noTable__sbv__SubjectSelect") },
+    { name: "MaterialArchive__noTable__sbh__SubjectSelect", value: "id" },
+  ];
+
+  // Create a form element
+  const form = document.createElement("form");
+  form.action = "https://www.examinations.ie/exammaterialarchive/";
+  form.method = "POST";
+  form.target = "responseFrame"; // Set the target to the iframe
+
+  // Add input fields to the form in the specified order
+  forminfo.forEach((item) => {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = item.name;
+    input.value = item.value;
+    form.appendChild(input);
+  });
+
+  // Append the form to the body and submit it
+  document.body.appendChild(form);
+  form.submit();
+
+  // Remove the form after submission to keep the DOM clean
+  document.body.removeChild(form);
+}
+
+// Helper function to get the value of a field
+function getFieldValue(selector: String) {
+  const element = document.querySelector(selector + ":not([disabled])");
+  return element ? (element as HTMLSelectElement).value.trim() : "";
+}
+</script>
