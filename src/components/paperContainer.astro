@@ -10,6 +10,7 @@ import JcSubjects from "./subcomponents/jcSubjects.astro"
 import YearDropdown from "./subcomponents/yearDropdown.astro"
 import DeferredYear from "./subcomponents/deferredYear.astro"
 import GetPapers from "./subcomponents/getPapers.astro"
+import ExaminationsIframe from "./subcomponents/examinationsIframe.astro";
 ---
 
 <div id="container">
@@ -38,7 +39,9 @@ import GetPapers from "./subcomponents/getPapers.astro"
       <br>
       <GetPapers />
     </section>
-
+    <section id="frame">
+      <ExaminationsIframe />
+    </section>
   </main>
 </div>
 
@@ -63,14 +66,20 @@ import GetPapers from "./subcomponents/getPapers.astro"
     height: 100%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
   }
 
-  #hero {
+  #hero, #frame {
     display: flex;
     align-items: start;
     flex-direction: column;
     justify-content: center;
     padding: 16px;
+  }
+
+  #frame {
+    width: 800px;
+    height: 900px;
   }
 
   h1 {
