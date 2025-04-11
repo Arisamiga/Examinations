@@ -32,8 +32,10 @@
         document.querySelectorAll("[id='MaterialArchive__noTable__sbv__SubjectSelect']").forEach((element) => {
             if (element !== targetElement) {
                 (element as HTMLSelectElement).disabled = true;
+                (element as HTMLSelectElement).style.display = "none"
             } else {
                 (element as HTMLSelectElement).disabled = false;
+                (element as HTMLSelectElement).style.display = "block"
             }
         });
     })
