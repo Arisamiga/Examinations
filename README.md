@@ -1,48 +1,70 @@
-# Astro Starter Kit: Basics
+# Exam Material Archive
 
-```sh
-npm create astro@latest -- --template basics
-```
+![Website Screenshot](/public/screenshot.PNG)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+This project provides an improved interface for accessing and searching the **State Examinations Commission's Exam Material Archive**. It is built using [Astro](https://astro.build).
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🌟 Features
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Dynamic Dropdowns**: Select examination types, subjects, and years with interactive dropdowns.
+- **Deferred Year Support**: Handles deferred examination papers dynamically.
+- **Custom Styling**: Clean and modern UI with custom CSS.
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+The project is organized as follows:
 
 ```text
 /
-├── public/
-│   └── favicon.svg
+├── public/                     # Static assets
+│   ├── favicon.ico             # Favicon for the site
+│   ├── logo.jpg                # Logo used in meta tags
+│   └── background.svg          # Background image
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/             # Reusable components
+│   │   ├── mainContainer.astro # Main page container
+│   │   ├── paperContainer.astro # Papers page container
+│   │   └── subcomponents/      # Smaller reusable components
+│   ├── layouts/                # Layout components
+│   │   ├── Layout.astro        # Main layout
+│   │   └── paperButtonLayout.astro # Layout for grouped buttons
+│   └── pages/                  # Pages of the site
+│       ├── index.astro         # Homepage
+│       └── papers.astro        # Papers page
+├── .astro/                     # Astro-generated types and configs
+├── .github/workflows/          # GitHub Actions for deployment
+├── .vscode/                    # VS Code workspace settings
+├── package.json                # Project dependencies and scripts
+├── astro.config.mjs            # Astro configuration
+├── tsconfig.json               # TypeScript configuration
+└── .prettierrc                 # Prettier configuration
 ```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+Run the following commands from the root of the project:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Command           | Action                                            |
+| :---------------- | :------------------------------------------------ |
+| `npm install`     | Installs dependencies                             |
+| `npm run dev`     | Starts the development server at `localhost:4321` |
+| `npm run build`   | Builds the project for production                 |
+| `npm run preview` | Previews the production build locally             |
+| `npm run format`  | Formats the codebase using Prettier               |
 
-## 👀 Want to learn more?
+## 🌐 Deployment
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This project is deployed using **GitHub Pages**. The deployment workflow is defined in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+
+## 📜 License and Disclaimer
+
+All examination materials are the copyright of the **State Examinations Commission (SEC)**. This project does not claim ownership of the materials and complies with the SEC's terms of use. For more details, see the [LICENSE.md](LICENSE.md) file.
+
+## 🎯 TODO
+
+- Add a search bar to the subjects dropdown for easier navigation.
+
+## Code and bug reporting
+
+You can open an issue at https://github.com/Arisamiga/Examinations
