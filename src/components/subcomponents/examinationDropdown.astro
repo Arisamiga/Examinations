@@ -33,7 +33,22 @@
 
             const targetElement = document.querySelector(`[${value}-subjects]`);
 
+            const searchBar = document.getElementsByClassName("search-bar")[0]
+
+            if (value == "") {
+                document
+                .querySelectorAll("[id='MaterialArchive__noTable__sbv__SubjectSelect']")
+                .forEach((element) => {
+                        (element as HTMLSelectElement).disabled = true;
+                        (element as HTMLSelectElement).style.display = 'block';
+                });
+                (searchBar as HTMLInputElement).disabled = true;
+                return;
+            }
+
             console.log(`[${value}-subjects]`);
+
+            (searchBar as HTMLInputElement).disabled = false;
 
             document
                 .querySelectorAll("[id='MaterialArchive__noTable__sbv__SubjectSelect']")

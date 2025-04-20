@@ -12,6 +12,8 @@ import DeferredYear from './subcomponents/deferredYear.astro';
 import GetPapers from './subcomponents/getPapers.astro';
 import ExaminationsIframe from './subcomponents/examinationsIframe.astro';
 import Copyright from './subcomponents/copyright.astro';
+import SubjectSearchBar from './subcomponents/subjectSearchBar.astro';
+import ColumnLayout from '../layouts/columnLayout.astro';
 ---
 
 <div id="container">
@@ -26,11 +28,15 @@ import Copyright from './subcomponents/copyright.astro';
                 <ExaminationDropdown />
             </PaperButtonLayout>
             <br />
-            <PaperButtonLayout>
-                <LcaSubjects />
-                <LceSubjects />
-                <JcSubjects />
-            </PaperButtonLayout>
+            
+            <ColumnLayout>
+              <SubjectSearchBar />
+              <LcaSubjects />
+              <LceSubjects />
+              <JcSubjects />
+            </ColumnLayout>
+
+            
 
             <br />
             <PaperButtonLayout>

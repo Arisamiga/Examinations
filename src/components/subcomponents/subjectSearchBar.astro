@@ -1,0 +1,58 @@
+---
+
+---
+
+
+<div>
+    <input
+        type="text"
+        placeholder="Search..."
+        class="search-bar"
+        disabled
+    />
+</div>
+
+<style>
+    .search-bar {
+        padding: 8px;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: transparent;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-color: #c9cdd2;
+    }
+
+    .dropdown {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+    }
+</style>
+
+<script>
+document.getElementsByClassName("search-bar")[0].addEventListener("input", handleInputChange);
+
+function getActiveChoiceElement() {
+    const selectElement = document.querySelector('#MaterialArchive__noTable__sbv__SubjectSelect:not([disabled])');
+    if (selectElement instanceof HTMLSelectElement) {
+        return Array.from(selectElement.options); // Get all options from the select element
+    }
+    return [];
+}
+
+function handleInputChange(event) {
+    const searchTerm = event.target.value.toLowerCase();
+    const options = getActiveChoiceElement();
+
+    console.log(options)
+    options.forEach((option) => {
+        if (option.innerText.toLowerCase().includes(searchTerm)) {
+            option.style.display = "block"; // Show matching options
+        } else {
+            option.style.display = "none"; // Hide non-matching options
+        }
+    });
+}
+</script>
