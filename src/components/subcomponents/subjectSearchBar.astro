@@ -2,14 +2,8 @@
 
 ---
 
-
 <div>
-    <input
-        type="text"
-        placeholder="Search..."
-        class="search-bar"
-        disabled
-    />
+    <input type="text" placeholder="Search..." class="search-bar" disabled />
 </div>
 
 <style>
@@ -32,27 +26,29 @@
 </style>
 
 <script>
-document.getElementsByClassName("search-bar")[0].addEventListener("input", handleInputChange);
+    document.getElementsByClassName('search-bar')[0].addEventListener('input', handleInputChange);
 
-function getActiveChoiceElement() {
-    const selectElement = document.querySelector('#MaterialArchive__noTable__sbv__SubjectSelect:not([disabled])');
-    if (selectElement instanceof HTMLSelectElement) {
-        return Array.from(selectElement.options); // Get all options from the select element
-    }
-    return [];
-}
-
-function handleInputChange(event) {
-    const searchTerm = event.target.value.toLowerCase();
-    const options = getActiveChoiceElement();
-
-    console.log(options)
-    options.forEach((option) => {
-        if (option.innerText.toLowerCase().includes(searchTerm)) {
-            option.style.display = "block"; // Show matching options
-        } else {
-            option.style.display = "none"; // Hide non-matching options
+    function getActiveChoiceElement() {
+        const selectElement = document.querySelector(
+            '#MaterialArchive__noTable__sbv__SubjectSelect:not([disabled])'
+        );
+        if (selectElement instanceof HTMLSelectElement) {
+            return Array.from(selectElement.options); // Get all options from the select element
         }
-    });
-}
+        return [];
+    }
+
+    function handleInputChange(event) {
+        const searchTerm = event.target.value.toLowerCase();
+        const options = getActiveChoiceElement();
+
+        console.log(options);
+        options.forEach((option) => {
+            if (option.innerText.toLowerCase().includes(searchTerm)) {
+                option.style.display = 'block'; // Show matching options
+            } else {
+                option.style.display = 'none'; // Hide non-matching options
+            }
+        });
+    }
 </script>
