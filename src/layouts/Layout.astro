@@ -1,41 +1,53 @@
 ---
-import favicon from "../assets/favicon.ico"
-import logo from "../assets/logo.jpg"
+import favicon from '../assets/favicon.ico';
+import logo from '../assets/logo.jpg';
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/x-icon" href={favicon} />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="A Improved Version for Searching the Exam Materials Archive.">
-		<meta name="keywords" content="exam materials, educational resources, exam archive, state examinations, study materials, past papers, exam preparation, educational archive, Leaving Certificate, Applied, Vocational, Junior Certificate, Irish, English, Mathematics, History, Geography, German, Spanish, Italian, Art, Craft, Design, Music, Science, Home Economics, Technology, Metalwork, Graphics, Business Studies, Typewriting, Latin, Ancient Greek, Classical, Hebrew, Religious Education, Civic, Social,Political ">
-		<title>Exam Material Archive</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/x-icon" href={favicon} />
+        <meta name="generator" content={Astro.generator} />
+        <meta
+            name="description"
+            content="A Improved Version for Searching the Exam Materials Archive."
+        />
+        <meta
+            name="keywords"
+            content="exam materials, educational resources, exam archive, state examinations, study materials, past papers, exam preparation, educational archive, Leaving Certificate, Applied, Vocational, Junior Certificate, Irish, English, Mathematics, History, Geography, German, Spanish, Italian, Art, Craft, Design, Music, Science, Home Economics, Technology, Metalwork, Graphics, Business Studies, Typewriting, Latin, Ancient Greek, Classical, Hebrew, Religious Education, Civic, Social,Political "
+        />
+        <title>Exam Material Archive</title>
 
-		<!-- Social Media Meta Tags -->
-		<meta property="og:title" content="Exam Material Archive" />
-        <meta property="og:description" content="A Improved Version for Searching the Exam Materials Archive." />
+        <!-- Social Media Meta Tags -->
+        <meta property="og:title" content="Exam Material Archive" />
+        <meta
+            property="og:description"
+            content="A Improved Version for Searching the Exam Materials Archive."
+        />
         <meta property="og:url" content={Astro.site} />
-		<meta property="og:image" content={logo.src} />
+        <meta property="og:image" content={logo.src} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Exam Material Archive" />
-        <meta name="twitter:description" content="A Improved Version for Searching the Exam Materials Archive." />
+        <meta
+            name="twitter:description"
+            content="A Improved Version for Searching the Exam Materials Archive."
+        />
         <meta name="twitter:image" content={logo.src} />
-		<meta name="theme-color" content="#92c2b0" />
-	</head>
-	<body>
-		<slot />
-	</body>
+        <meta name="theme-color" content="#92c2b0" />
+    </head>
+    <body>
+        <slot />
+    </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
 </style>

@@ -1,7 +1,11 @@
 ---
+
 ---
 
-<select name="MaterialArchive__noTable__sbv__ExaminationSelect" id="MaterialArchive__noTable__sbv__ExaminationSelect" >
+<select
+    name="MaterialArchive__noTable__sbv__ExaminationSelect"
+    id="MaterialArchive__noTable__sbv__ExaminationSelect"
+>
     <option value="" selected="">[Select Examination]</option>
     <option value="0" disabled></option>
     <option value="lb" aria-label="Leaving Certificate Applied">Leaving Certificate Applied</option>
@@ -22,21 +26,25 @@
 </style>
 
 <script>
-    document.getElementById("MaterialArchive__noTable__sbv__ExaminationSelect")?.addEventListener("change", (elm) => {
-       const value = (elm.target as HTMLSelectElement)?.value ?? ""
+    document
+        .getElementById('MaterialArchive__noTable__sbv__ExaminationSelect')
+        ?.addEventListener('change', (elm) => {
+            const value = (elm.target as HTMLSelectElement)?.value ?? '';
 
-        const targetElement = document.querySelector(`[${value}-subjects]`);
+            const targetElement = document.querySelector(`[${value}-subjects]`);
 
-        console.log(`[${value}-subjects]`)
+            console.log(`[${value}-subjects]`);
 
-        document.querySelectorAll("[id='MaterialArchive__noTable__sbv__SubjectSelect']").forEach((element) => {
-            if (element !== targetElement) {
-                (element as HTMLSelectElement).disabled = true;
-                (element as HTMLSelectElement).style.display = "none"
-            } else {
-                (element as HTMLSelectElement).disabled = false;
-                (element as HTMLSelectElement).style.display = "block"
-            }
+            document
+                .querySelectorAll("[id='MaterialArchive__noTable__sbv__SubjectSelect']")
+                .forEach((element) => {
+                    if (element !== targetElement) {
+                        (element as HTMLSelectElement).disabled = true;
+                        (element as HTMLSelectElement).style.display = 'none';
+                    } else {
+                        (element as HTMLSelectElement).disabled = false;
+                        (element as HTMLSelectElement).style.display = 'block';
+                    }
+                });
         });
-    })
- </script>
+</script>

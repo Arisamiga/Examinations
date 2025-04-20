@@ -1,43 +1,65 @@
 ---
+
 ---
 
-<select name="MaterialArchive__noTable__sbv__YearSelect" id="MaterialArchive__noTable__sbv__YearSelect" disabled deferred-Year>
-   <option value="" selected="" >[Select Deffered Year]</option>
-   <option value="0" disabled></option>
-   <option value="2024" aria-label="2024">2024</option>
-   <option value="2023" aria-label="2023">2023</option>
-   <option value="2022" aria-label="2022">2022</option>
+<select
+    name="MaterialArchive__noTable__sbv__YearSelect"
+    id="MaterialArchive__noTable__sbv__YearSelect"
+    disabled
+    deferred-Year
+>
+    <option value="" selected="">[Select Deffered Year]</option>
+    <option value="0" disabled></option>
+    <option value="2024" aria-label="2024">2024</option>
+    <option value="2023" aria-label="2023">2023</option>
+    <option value="2022" aria-label="2022">2022</option>
 </select>
 
- 
- <style>
-     select {
-         font-family: Arial;
-         padding: 8px 16px;
-         border: 1px solid transparent;
-         border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-         cursor: pointer;
-         user-select: none;
-         box-shadow: inset 0px 0px 2px black;
-     }
- </style>
+<style>
+    select {
+        font-family: Arial;
+        padding: 8px 16px;
+        border: 1px solid transparent;
+        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        cursor: pointer;
+        user-select: none;
+        box-shadow: inset 0px 0px 2px black;
+    }
+</style>
 
 <script>
-   document.getElementById("MaterialArchive__noTable__sbv__ViewType")?.addEventListener("change", (elm) => {
-      const value = (elm.target as HTMLSelectElement)?.value ?? ""
-      if (value != "deferredexams" && value != "deferredmarkingschemes") {
-         (document.querySelector("[deferred-Year]") as HTMLSelectElement).disabled = true;
-         (document.querySelector("[deferred-Year]") as HTMLSelectElement).style.display = "none";
-         (document.querySelector("#MaterialArchive__noTable__sbv__YearSelect:not([deferred-Year])") as HTMLSelectElement).disabled = false;
-         (document.querySelector("#MaterialArchive__noTable__sbv__YearSelect:not([deferred-Year])") as HTMLSelectElement).style.display = "block";
-      }
-      else {
-         (document.querySelector("[deferred-Year]") as HTMLSelectElement).disabled = false;
-         (document.querySelector("[deferred-Year]") as HTMLSelectElement).style.display = "block";
-         (document.querySelector("#MaterialArchive__noTable__sbv__YearSelect:not([deferred-Year])") as HTMLSelectElement).disabled = true;
-         (document.querySelector("#MaterialArchive__noTable__sbv__YearSelect:not([deferred-Year])") as HTMLSelectElement).style.display = "none"
-      }
-
-      
-   })
+    document
+        .getElementById('MaterialArchive__noTable__sbv__ViewType')
+        ?.addEventListener('change', (elm) => {
+            const value = (elm.target as HTMLSelectElement)?.value ?? '';
+            if (value != 'deferredexams' && value != 'deferredmarkingschemes') {
+                (document.querySelector('[deferred-Year]') as HTMLSelectElement).disabled = true;
+                (document.querySelector('[deferred-Year]') as HTMLSelectElement).style.display =
+                    'none';
+                (
+                    document.querySelector(
+                        '#MaterialArchive__noTable__sbv__YearSelect:not([deferred-Year])'
+                    ) as HTMLSelectElement
+                ).disabled = false;
+                (
+                    document.querySelector(
+                        '#MaterialArchive__noTable__sbv__YearSelect:not([deferred-Year])'
+                    ) as HTMLSelectElement
+                ).style.display = 'block';
+            } else {
+                (document.querySelector('[deferred-Year]') as HTMLSelectElement).disabled = false;
+                (document.querySelector('[deferred-Year]') as HTMLSelectElement).style.display =
+                    'block';
+                (
+                    document.querySelector(
+                        '#MaterialArchive__noTable__sbv__YearSelect:not([deferred-Year])'
+                    ) as HTMLSelectElement
+                ).disabled = true;
+                (
+                    document.querySelector(
+                        '#MaterialArchive__noTable__sbv__YearSelect:not([deferred-Year])'
+                    ) as HTMLSelectElement
+                ).style.display = 'none';
+            }
+        });
 </script>
