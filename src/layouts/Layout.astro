@@ -1,5 +1,6 @@
 ---
 import favicon from "../assets/favicon.ico"
+import logo from "../assets/logo.jpg"
 ---
 
 <!doctype html>
@@ -17,12 +18,13 @@ import favicon from "../assets/favicon.ico"
 		<meta property="og:title" content="Exam Material Archive" />
         <meta property="og:description" content="A Improved Version for Searching the Exam Materials Archive." />
         <meta property="og:url" content={Astro.site} />
-        <meta property="og:image" content={favicon} />
+		<meta property="og:image" content={logo.src} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Exam Material Archive" />
         <meta name="twitter:description" content="A Improved Version for Searching the Exam Materials Archive." />
-        <meta name="twitter:image" content={favicon} />
+        <meta name="twitter:image" content={logo.src} />
+		<meta name="theme-color" content="#92c2b0" />
 	</head>
 	<body>
 		<slot />
