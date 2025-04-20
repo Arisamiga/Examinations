@@ -7,9 +7,8 @@ This project provides an improved interface for accessing and searching the **St
 ## 🌟 Features
 
 - **Responsive Design**: Optimized for both desktop and mobile devices.
-- **Dynamic Dropdowns**: Select examination types, subjects, and years with interactive dropdowns.
+- **Dynamic Dropdowns**: Select examination types, subjects, and years with interactive dropdowns that don't change when changing the subject.
 - **Deferred Year Support**: Handles deferred examination papers dynamically.
-- **Custom Styling**: Clean and modern UI with custom CSS.
 
 ## 🚀 Project Structure
 
