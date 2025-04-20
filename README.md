@@ -60,9 +60,15 @@ This project is deployed using **GitHub Pages**. The deployment workflow is defi
 
 All examination materials are the copyright of the **State Examinations Commission (SEC)**. This project does not claim ownership of the materials and complies with the SEC's terms of use. For more details, see the [LICENSE.md](LICENSE.md) file.
 
-## 🎯 TODO
+## ❓ Frequently Asked Questions
 
-- Add a search bar to the subjects dropdown for easier navigation.
+#### **Why doesn't my selected options showing up?**
+
+This can be for many reasons as the values selected might not be available. We aim to have as little restrictions to the choices as possible. Make sure to have all the values selected before clicking "Apply". If you are still having issues, please open an issue on GitHub.
+
+#### **I am selecting a subject before 2019 for Junior Certificate but it doesnt show up**
+
+The Subjects for Junior Certificate were changed in 2019. The subjects before 2019 are available but under different names for example "Technical Graphics" is not renamed to "Graphics" both options are available so if you are searching for before 2019 you will need to select "Technical Graphics" and not "Graphics". The same applies for all changed subjects. If you are looking for a subject that is not available please open an issue on GitHub.
 
 ## Code and bug reporting
 
